@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Update Item</h2>
+<form method="POST">
+    <label for="name">Item Name:</label>
+    <input type="text" name="name" value="{{ item.name }}" required>
+    
+    <label for="description">Description:</label>
+    <textarea name="description">{{ item.description }}</textarea>
+    
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" value="{{ item.quantity }}" required>
+    
+    <label for="category">Category:</label>
+    <input type="text" name="category" value="{{ item.category }}">
+    
+    <button type="submit">Update Item</button>
+</form>
+{% endblock %}

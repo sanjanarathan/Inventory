@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <style>
+    /* Center the login form and give it a nice border */
+    .login-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Add some space between form elements */
+    .login-form .form-group {
+        margin-bottom: 15px;
+    }
+
+
+    /* Style the "Register here" link */
+    .login-container a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .login-container a:hover {
+        text-decoration: underline;
+    }
+
+    /* Center the text */
+    .text-center {
+        text-align: center;
+    }
+
+    /* Padding and margins for better spacing */
+    .mt-3 {
+        margin-top: 1rem;
+    }
+  </style>
+
+  <div class="container">
+    <div class="login-container">
+      <h2 class="text-center">Login</h2>
+      <form method="POST" class="login-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required class="form-control">
+        </div>
+
+        <!-- Center the button using Bootstrap's flex utility -->
+        <div class="d-flex justify-content-left">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+      <p class="text-center mt-3">Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+    </div>
+  </div>
+{% endblock %}
